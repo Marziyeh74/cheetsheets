@@ -15,7 +15,8 @@
 - SpEL : Spring expression language
 
 ## Setting Up
-**ابزارهای مورد نیاز برای نصب :**
-1. JDK
-2. یک IDE
+**مراحل نصب  :**
+1. Install last version of JDK ( download from [oracle](https://www.oracle.com/))
+2. set environment variables
+3.  یک IDE
 ## IOC
