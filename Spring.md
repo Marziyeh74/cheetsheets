@@ -17,6 +17,6 @@
 ## Setting Up
 **مراحل نصب  :**
 1. Install last version of JDK ( download from [oracle](https://www.oracle.com/))
-2. set environment variables
+2. set environment variables(set **JAVA_HOME** system variable and add it to **path** variable) . Now check **java -version** command in cmd for success installation of JDK.
 3.  یک IDE
 ## IOC
