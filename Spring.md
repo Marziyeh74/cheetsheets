@@ -24,6 +24,6 @@
     -  unzip Tomcat file in window driver
     - add it to eclipse 
       - menue Window -> show view -> other -> tyoe server and select it.
-      - define a new server from the link in tab server (select Tomcat, server hostname and name)
-    - 
+      - define a new server from the link in tab server (select Tomcat, server hostname and name and then select Apache Tomcat installation folder and select jdk instalation folder for JRE) 
+    - test Tomcat server
 ## IOC
