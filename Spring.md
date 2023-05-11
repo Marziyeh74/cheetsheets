@@ -35,9 +35,9 @@
  کامپوننت ها در داخل خودشان ممکن است نیاز  به یک object داشته باشند.  یعنی یک وابستگی وجود داشته باشد. این وابستگی باید تامین شود. IoC می گوید نرم افزار باید طوری طراجی شود که کنترل وابستگی ها از داخل کامپوننت ها خارج شود و به یک object به نام  Container سپرده شود. در غیر این صورت این وابستگی به صورت hardcode  در داخل کامپوننت باید تامین شود که اصولی نیست چون هنگام توسعه نرم افزار باید کدها تغییر کنند.
  
  ### An example of what is the problem?!
- 
+ مثال اول:
  ```java
- 
+
  # Circle.java
  Class Circle{
  
@@ -67,10 +67,47 @@
  }
  ```
  
-طبق مثال بالا در این جا کلاس Application به کلاس هایTriangle  و Circle وابسته است. نرم افزار ما قابل توسعه نیست. اگر بخواهیم یک کلاس دیگر مانند Square ایجاد کنیم و از آن در کلاس Application استفاده کنیم باید قطعه کد هایی که برای کلاس Circle  و Triangle زدیم تکرار کنیم.   
+طبق مثال بالا در این جا کلاس Application به کلاس هایTriangle  و Circle وابسته است. نرم افزار ما قابل توسعه نیست. اگر بخواهیم یک کلاس دیگر مانند Square ایجاد کنیم و از آن در کلاس Application استفاده کنیم باید قطعه کد هایی که برای کلاس Circle  و Triangle زدیم تکرار کنیم. یعنی تغییرات را به صورت hardcode اضافه کنیم. این روش درست نیست.
+
+ مثال دوم :
+  ```java
  
+  abstract Class Shape{
  
- شعار IoC :
+    public abstract void draw(){
+    }
+ }
+ 
+ # Circle.java
+ Class Circle extends Shape{
+ 
+    public void draw(){
+    ....
+    }
+ }
+ 
+  # Triangle.java
+ Class Triangle extends Shape {
+ 
+    public void draw(){
+    ....
+    }
+ }
+ #Application class 
+ class Application {
+ 
+     public static void main(String[] args){
+        Shape myShape = new Triangle();
+        myShape.draw();
+        
+        Shape myShape  = new Circle();
+        myShape.draw();
+        
+     }
+ }
+ ```
+در مثال دوم برای بهبود راه حل از چندریختی (polymorphyism) استفاده کردیم . به جای این که کلاس Appication با هر کلاس ارتباط داشته باشد از parent ان ها استفاده می کند.
+شعار IoC :
 
 **Don`t call us , we`ll call you**
 
