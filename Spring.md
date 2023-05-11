@@ -26,4 +26,18 @@
       - menue Window -> show view -> other -> tyoe server and select it.
       - define a new server from the link in tab server (select Tomcat, server hostname and name and then select Apache Tomcat installation folder and select jdk instalation folder for JRE) 
     - test Tomcat server
-## IOC
+
+
+## IoC(Inversion of Control)
+
+سیستم های اطلاعاتی از یک سری اجزا یا به اصطلاح کامپوننت تشکیل شده اند. این کامپوننت ها یک سری سرویس دارند. اگر بخواهیم اصول مهندسی نرم افزار را رعایت کنیم باید برای هر سرویس یک **Interface** ایجاد کنیم. **Interface** یک بدنه خالی است که باید پیاده سازی شود. ممکن است برای یک **Interface** چند پیاده سازی وجود داشته باشد. اگر مثلا یک سرویس جدیدی بخواهیم اضافه کنیم تنها لازم است که یک پیاده سازی جدید از **Interface** ایجاد کنیم. کامپوننت ها به هم ممکن است سرویس ارایه بدهند یعنی با هم ارتباط داشته باشند. 
+ کامپوننت ها در داخل خودشان ممکن است نیاز  به یک object داشته باشند.  یعنی یک وابستگی وجود داشته باشد. این وابستگی باید تامین شود. IoC می گوید نرم افزار باید طوری طراجی شود که کنترل وابستگی ها از داخل کامپوننت ها هلرح شود و به یک object به نام  Container سپرده شود. در غیر این صورت این وابستگی به صورت hardcode  در داخل کامپوننت باید تامین شود که اصولی نیست چون هنگام توسعه نرم افزار باید کدها تغییر کنند.
+ کلاس های Pattern زیر در Spring برای IOC راهکار داده اند:
+ Factory Pattern / Template Pattern / Strategy Pattern / Service Lookup
+ 
+ دو رهیافت یا رویکرد کلی برای IOC :
+ - Dependency Injection (DI)
+ - Dependency Lookup (DL)
+  این دو تا کامل کننده هم هستند . تفاوت این دو این است که در در حالت اول contatiner از بیرون می آید وابستگی را تامین می کند . در حالت دوم خودم کامپوننت مسوول تامین وابستگی برای خودش هست.
+ 
+ 
