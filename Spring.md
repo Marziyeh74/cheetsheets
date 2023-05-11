@@ -1,10 +1,10 @@
-## Introduction
+## 1- Introduction
 فریم ورک spring  یک فریم ورک متن باز برای ساخت و توسعه بهتر و سریع تر نرم افزارهای enterprise بر مبنای JVM می باشد.
 دلایل استفاده این همه برنامه نویس از این فریمورک performance بسیار بالا و تست راحت و معماری آن است.
 هدف فریمورک spring این است که برنامه نویسی J2EE را آسان تر کند و با استفاده از مدل برنامه نویسی   **POJO**، برنامه نویسی را گسترش دهد.
 
 هدف اصلی این فریم ورک نرم افزارهای enterprise مانند سیستم های اطلاعاتی ERP می باشد.اما در موارد دیگر مانند app های موبایل و سیستم های cload هم از spring استفاده می شود. 
-## Architecture 
+## 2- Architecture 
 ![architecture](https://user-images.githubusercontent.com/34265067/236350881-578a0ee7-04fd-4492-aa1b-894e9bf161de.png)
 
 فریم ورک spring برای همه لایه ها از UI گرفته تا data access و core راهکار دارد.
@@ -14,7 +14,7 @@
 - Cpntext : ApplicationContextContainer
 - SpEL : Spring expression language
 
-## Setting Up
+## 3- Setting Up
 
 1. Install last version of JDK ( download from [oracle](https://www.oracle.com/))
 2. set environment variables(set **JAVA_HOME** system variable and add it to **path** variable). Now check **java -version** command in cmd for success installation of JDK.
@@ -28,7 +28,7 @@
     - test Tomcat server
 
 
-## IoC(Inversion of Control)
+## 4- IoC(Inversion of Control)
 
 سیستم های اطلاعاتی از یک سری اجزا یا به اصطلاح کامپوننت تشکیل شده اند. این کامپوننت ها یک سری سرویس دارند. اگر بخواهیم اصول مهندسی نرم افزار را رعایت کنیم باید برای هر سرویس یک **Interface** ایجاد کنیم. **Interface** یک بدنه خالی است که باید پیاده سازی شود. ممکن است برای یک **Interface** چند پیاده سازی وجود داشته باشد. اگر مثلا یک سرویس جدیدی بخواهیم اضافه کنیم تنها لازم است که یک پیاده سازی جدید از **Interface** ایجاد کنیم. کامپوننت ها به هم ممکن است سرویس ارایه بدهند یعنی با هم ارتباط داشته باشند. 
  
@@ -44,5 +44,12 @@
  - Dependency Lookup (DL)
   
   این دو تا کامل کننده هم هستند . تفاوت این دو این است که در در حالت اول contatiner از بیرون می آید وابستگی را تامین می کند . در حالت دوم خود کامپوننت مسئول تامین وابستگی  خودش هست.
+  
+  ### Dependency Injection
+  
+  اشیا  (object)داخل application نباید مسدول جست و جوی منابع مورد نیاز (منابعی که با آن وابسته هستند) را داشته باشند. خود IoC container باید ایجاد object و تامین وابستگی را مدیریت کند. به دو روش می توان از Dependency Injection استفاده کرد:
+  - Constructor Injection
+  - Setter Injection
+  ### Dependency Lookup 
  
  
