@@ -151,6 +151,39 @@
  
  مثال چهارم : 
  
+   ```java
+ 
+ #Application class 
+ class Application {
+    private Shape shape;
+    public setShape(Shape shape){
+        this.shape=shape;
+    }
+   
+   public void drawShape(){
+        this.shape.draw();
+   }
+ }
+ 
+ # in different class 
+ 
+ class Main {
+   public static void main(String[] args){
+         Application app = new Application();
+        Circle mycricle= new Circle();
+        app.setShape(mycricle);
+        app.drawShape();
+ 
+   }
+}
+   
+ 
+ ```
+ در این مثال همان طور که می بینید کلاس Application فقط  به Shape وابسته است. و اگر این کلاس را به عنوان یک کامپوننت در نظر بگیریم می بینید که خودش shape را new نکرده و وابستگی به shape از بیرون از کلاس توسط کلاس دیگری که  متد setShape را فراخوانی می کند تامین می شود.
+ هم چنین از چندریختگی هم استفاده شده به این صورت که در حین توسعه هر کلاس دیگری که اضافه شود فقط کافیسیت از کلاس Shape ارث بری کند. و متد drawShape را با امضای مشخص شده پیاده سازی کند. بنابراین کلاس Application تغییر نخواهد کرد.
+ اما در بیرون از Application مثلا در یک کلاس مانند کلاس Main ما شی مورد نیازمان برای مثال  از نوع Circle ایجاد می کنیم. و آن را به متد setShape یک شی از Application پاس می دهیم. در این زمان  پارامتر shape درمتد setShape شی app با myCricle مقداردهی می شود  
+  
+ 
 شعار IoC :
 
 **Don`t call us , we`ll call you**
