@@ -106,7 +106,51 @@
      }
  }
  ```
-در مثال دوم برای بهبود راه حل از چندریختی (polymorphyism) استفاده کردیم . به جای این که کلاس Appication با هر کلاس ارتباط داشته باشد از parent ان ها استفاده می کند.
+در مثال دوم برای بهبود راه حل از چندریختی (polymorphyism) استفاده کردیم . به جای این که کلاس Appication با هر کلاس ارتباط داشته باشد از parent ان ها استفاده می کند. در این جا هنگام تعریف نوع شی myShape از نوع کلاس  abstract یعنی Shape می باشد. اما هنگام new کردن باید پیاده سازی مشخص شود.  و وقتی متد draw شی myShape فراخوانی می شود، در واقع متد draw کلاسی که هنگام new کردن مشخص کردیم فراخوانی می شود. بنابراین هنگام توسعه کد اگر یک Shape جدید مثلا کلاس مربع  اضافه شود، در کلاس Application هنوز به نوع کلاس در هنگام new کردن وابسته هستیم.
+
+مثال سوم : 
+
+
+  ```java
+ 
+  abstract Class Shape{
+ 
+    public abstract void draw(){
+    }
+ }
+ 
+ # Circle.java
+ Class Circle extends Shape{
+ 
+    public void draw(){
+    ....
+    }
+ }
+ 
+  # Triangle.java
+ Class Triangle extends Shape {
+ 
+    public void draw(){
+    ....
+    }
+ }
+ #Application class 
+ class Application {
+ 
+     public static void main(String[] args){
+        Shape myShape = new Circle();
+       myDrawMethod(myShape);
+        
+     }
+     public static void myDrawMethod(Shape shape){
+        shape.draw();
+    }
+ }
+ ```
+ در مثال سوم کمی کد را بهبود داده ایم. یک متد myDrawMethod در کلاس Applicaton تعریف کردیم که فقط وابسته به کلاس abstract یعنی Shape می باشد. در main ما هر پیاده سازی از shape که خواستیم مثلا Circle را new می کنیم و شی را به متدmyDrawMethod پاس می دهیم. اما هم چنان ما در داخل main هنگام new کردن به نوع shape وابسته ایم. مشکل هنوز حل نشده .. ما خودمان مجبوریم پیاده سازی را که می خواهیم ایجاد کنیم. ما باید وابستگی کلاس Application را به نوع پیاده سازی Shape مثلا Circle یا Triangle برداریم و فقط به Shape وابسته باشد. و این وابستگی توسط یک کلاس دیگر به این کلاس تزریق شود. کاری که در مثال چهارم انجام می دهیم. 
+ 
+ مثال چهارم : 
+ 
 شعار IoC :
 
 **Don`t call us , we`ll call you**
