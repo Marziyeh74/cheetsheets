@@ -203,7 +203,7 @@
   
   ### Dependency Injection
   
-  اشیا  (object)داخل application نباید مسدول جست و جوی منابع مورد نیاز (منابعی که با آن وابسته هستند) را داشته باشند. خود IoC container باید ایجاد object و تامین وابستگی را مدیریت کند. به دو روش می توان از Dependency Injection استفاده کرد:
+  اشیا  (object)داخل application نباید مسئولیت جست و جوی منابع مورد نیاز (منابعی که با آن وابسته هستند) را داشته باشند. خود IoC container باید ایجاد object و تامین وابستگی را مدیریت کند. به دو روش می توان از Dependency Injection استفاده کرد:
   - Constructor Injection
   - Setter Injection
   ### Dependency Lookup 
