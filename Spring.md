@@ -228,5 +228,6 @@
      }
      
      ```
+     
   در این مثال ApplicationContext یک Container در Spring می باشد و در واقع یک interface هست. ما appCtx را با کلاسClassPathXmlApplicationContext مقداردهی می کنیم. و ادرس فایل تنظیمات را به آن می دهیم. در این فایل config.xml اشیا ما یا به اصطلاح bean های ما تعریف شده اند. ما در خط بعد شی مورد نظر خود یعنی همان mybean را از container می گیریم. در واقع با خط کد دوم شی mybean در فایل config.xml جست و جو می شود. یعنی عمل lookup انجام می شود. پس وابستگی از این طریق تامین می شود. 
  
