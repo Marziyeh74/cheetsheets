@@ -207,5 +207,13 @@
   - Constructor Injection
   - Setter Injection
   ### Dependency Lookup 
+  
+  خود کلاس  باید وابستگی مورد نیاز خودش را تامین کند. مثال زیر یک نمونه ای از رویکرد Dependency Lookup می با شد:
+  
+     ```java
+     ApplicationContext appCtx = new ClassPathXmlApplicationContext("/config.xml");
+     MyBean bean= appCtx.getBean("myBean");
+     
+     ```
  
  
