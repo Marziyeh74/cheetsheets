@@ -218,10 +218,9 @@
       public static void main(String[] args){
       
         ApplicationContext appCtx = new ClassPathXmlApplicationContext("/config.xml");
-        //Lookup mybean from config.xml
+      
         MyBean bean= appCtx.getBean("myBean");
-        // use MyBean 
-        // 
+        
       }
      
      }
