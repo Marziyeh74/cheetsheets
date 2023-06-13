@@ -250,4 +250,15 @@
    ولی از دومی ساده تر می باشد و در نرم افزارهای سبک تر مانند موبایل هم استفاده می شود. ApplicationContext علاوه بر این که قابلیت های BeanFactory را دارد قابلیت های دیگری را هم دارد مثلا web را پشتیبانی می کند یا مثلا event هارا می تواند منتشر کند. 
 
  ## Configuration metadata strategies
+ 1. Xml-based
+ 2. Java-based
+ 3. Annotation-based
+ 4. Mix together
+ 
+ در پروژه های بزرگ بهتر است که تنظیمات metadata را به چندین فایل مختلف تقسیم کنیم مثلا براساس لایه های application . به عنوان مثال :
+ -  ConfigForWeb
+ -  ConfigForService
+ -  ConfigForDao
+ -  ConfigForConfig
+ -  ConfigForSecurity
  
