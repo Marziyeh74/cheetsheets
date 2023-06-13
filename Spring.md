@@ -233,14 +233,14 @@
  
  ## Spring containers
  
- در Spring ، container ها خودشان یک java object هستند. اگر ما application خودمان را در نظر بگیریم. container از یک سطح بالاتر می آید application ما را کنترل می کند. در جایی که یک کامپوننت به یک شی یا منبع دیگری نیاز باشند container این نیاز را تامین می کند. الگویی داریم تحت عنوان factory pattern . شکل زیر یک نمای کلی از این الگو هست می خواهیم ببینم طبق این الگو container چطور کار می کند:
+ در واقع Container  یک java object می باشد. اگر ما application خودمان را در نظر بگیریم. container از یک سطح بالاتر می آید application ما را کنترل می کند. در جایی که یک کامپوننت به یک شی یا منبع دیگری نیاز داشته باشد، container این نیاز را تامین می کند. الگویی داریم تحت عنوان factory pattern . شکل زیر یک نمای کلی از این الگو هست می خواهیم ببینم طبق این الگو container چطور کار می کند:
  
  ما یک سری Metadata داریم (انواع روش های کانفیگ کردن Metadata را در ادامه توضیح خواهیم داد) شامل فایل های xml یا کلاس های جاوا که یک سری تنظیمات برای bean ها  در داخل آن ها لحاظ شده است. bean چیست؟ bean  شی است که توسط spring container ایجاد و مدیریت می شود. در واقع هر object از transaction ها یا  کلاس هایی که خودتان تعریف کردید (java POJO classes) وقتی از container گرفته می شود ، این یک bean نامیده می شود.
   پس container استفاده از اطلاعات MetaData (تنظیمات bean ها ) و کلاس های POJO ( که می تواند transaction ها یا entity manager  یا کلاس های ساده که خودمان تعریف کردیم ، باشند) ، یک شی  تامین می کند که بتوانیم در application   خودمان از آن استفاده کنیم.
   دو container در spring داریم  که هر دو interface هستند و برای هر کدام کلاس های پیاده ساز مختلفی وجود دارد که با توجه به نیازمان و appliation مان از آن می توانیم استفاده کنیم. 
-  1. Bean Factory
- نسبت به ApplicationContext  ساده تر هست و 
-  3. ApplicationContext
+  1. Bean Factory 
+  2. ApplicationContext
+   اولی از دومی ساده تر می باشد.
 
  ## Configuration metadata strategies
  
