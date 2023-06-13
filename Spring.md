@@ -239,8 +239,14 @@
   پس container استفاده از اطلاعات MetaData (تنظیمات bean ها ) و کلاس های POJO ( که می تواند transaction ها یا entity manager  یا کلاس های ساده که خودمان تعریف کردیم ، باشند) ، یک شی  تامین می کند که بتوانیم در application   خودمان از آن استفاده کنیم.
   دو container در spring داریم  که هر دو interface هستند و برای هر کدام کلاس های پیاده ساز مختلفی وجود دارد که با توجه به نیازمان و appliation مان از آن می توانیم استفاده کنیم. 
   1. Bean Factory 
-  2. ApplicationContext
-   اولی از دومی ساده تر می باشد.
+    - xmlBeanFactory
+  3. ApplicationContext
+    - xmlApplicationContext
+    - AnnotationconfigApplicationContext
+    - webApplicationContext
+  
+   
+   اولی از دومی ساده تر می باشد و در نرم افزارهای سبک تر مانند موبایل هم استفاده می شود. ApplicationContext علاوه بر این که قابلیت های BeanFactory را دارد قابلیت های دیگری را هم دارد مثلا web را پشتیبانی می کند یا مثلا event هارا می تواند منتشر کند. 
 
  ## Configuration metadata strategies
  
