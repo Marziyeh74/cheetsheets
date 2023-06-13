@@ -261,4 +261,7 @@
  -  ConfigForDao
  -  ConfigForConfig
  -  ConfigForSecurity
+
+در ادامه با ارایه یک مثال می خواهیم 4 استراتژی config کردن metadata را توضیح دهیم. 
+فرض کنید یک کلاس Person داریم که شامل دو خصیصه firstName , lastName  و متدهای gtter , setter , toString می باشد.   
  
