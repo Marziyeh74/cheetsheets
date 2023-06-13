@@ -241,12 +241,14 @@
   1. Bean Factory 
     - xmlBeanFactory
   3. ApplicationContext
+
     - xmlApplicationContext
     - AnnotationconfigApplicationContext
     - webApplicationContext
   
    
-   اولی از دومی ساده تر می باشد و در نرم افزارهای سبک تر مانند موبایل هم استفاده می شود. ApplicationContext علاوه بر این که قابلیت های BeanFactory را دارد قابلیت های دیگری را هم دارد مثلا web را پشتیبانی می کند یا مثلا event هارا می تواند منتشر کند. 
+   ا
+   ولی از دومی ساده تر می باشد و در نرم افزارهای سبک تر مانند موبایل هم استفاده می شود. ApplicationContext علاوه بر این که قابلیت های BeanFactory را دارد قابلیت های دیگری را هم دارد مثلا web را پشتیبانی می کند یا مثلا event هارا می تواند منتشر کند. 
 
  ## Configuration metadata strategies
  
