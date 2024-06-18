@@ -11,7 +11,7 @@
 ### Core Container :
 -  Core : IOC and DI features
 - Bean : BeanFactory container
-- Cpntext : ApplicationContextContainer
+- Context : ApplicationContextContainer
 - SpEL : Spring expression language
 
 ## 3- Setting Up
