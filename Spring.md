@@ -18,12 +18,12 @@
 
 1. Install last version of JDK ( download from [oracle](https://www.oracle.com/))
 2. set environment variables(set **JAVA_HOME** system variable and add it to **path** variable). Now check **java -version** command in cmd for success installation of JDK.
-3. Install an IDE (e.g intellij , Netbeans , Eclipse and etc.). Netbeans ans Eclipse is much better. Eclipse is oopen sourse. The rest of the settings up is based on Eclipse Neon.
+3. Install an IDE (e.g intellij , Netbeans , Eclipse and etc.). Netbeans and Eclipse is much better. Eclipse is open sourse. The rest of the settings up is based on Eclipse Neon.
 4. Install a DBMS (e.g Mysql , Oracle (not free) , PostgreSQL). We use PostgreSQL as it`s free and high ranking. ( download  [PostgreSQL](https://www.postgresql.com/))
 5. Install a Web server(e.g Apache Tomcat). We use Tomcat (8.0.37).
     -  unzip Tomcat file in window driver
     - add it to eclipse 
-      - menue Window -> show view -> other -> tyoe server and select it.
+      - menue Window -> show view -> other -> type server and select it.
       - define a new server from the link in tab server (select Tomcat, server hostname and name and then select Apache Tomcat installation folder and select jdk instalation folder for JRE) 
     - test Tomcat server
 
