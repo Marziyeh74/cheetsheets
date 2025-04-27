@@ -94,3 +94,17 @@ h1::before {
   background-color: yellow; }
 
   ```
+
+  ## how styling :
+  - External : have another css file and link in out html file
+  - Internal : style in tag <style> in html file
+  - Inline style
+
+ ## Important properites :
+ ### background
+-  background-color
+- background-image
+- background-repeat
+- background-attachment
+- background-position
+- background (shorthand property)
