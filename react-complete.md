@@ -1,5 +1,4 @@
 
-
 ## Tools
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 - Create React App (CRA) : 
@@ -11,6 +10,20 @@ npm -i g create-react-app@5.0.1         or   npm -i g create-react-app@latest
 
 توسعه دهندگان حرفه ای استفاده می کنند.
 
+## نحوه نصب
+
+```
+npx create-react-app my-app-name  --tempalte typescript
+```
+
+برای مثال
+
+
+```
+npx create-react-app  schecduling-react-web 
+
+npx create-react-app  schecduling-react19-web  -- template typescript
+```
 ##
 ## کتابخانه های مرتبط
  ### React Native
@@ -987,6 +1000,23 @@ const UseTransitionExample = () => {
 }
 ```
 بعد از استفاده از این هوک application هنگ نمی کند و کاربر که عدد پشت سرهم وارد می کند بلافاصله نمایش داده میشود.
+
+
+### useActionState
+
+in react v19 : use for handline form data :
+
+```
+function Form() {
+  const [state, action, isPending] = useActionState(async (prevState, formData) => {
+    // Handle form submission
+  });
+  
+  return <form action={action}>{/* ... */}</form>;
+}
+```
+
+
 ### custom hoook
 مانند نوشتن تابع هست ولی بهتر هست که با use شروع شود تا react آن را به عنوان هوک تشخیص دهد. مثلا ساخت یک هوک برای fetch کردن داده ها :
 
@@ -1363,7 +1393,7 @@ key="{book.number}"
 
 import {useParams} from 'react-router-dom';
 
-const books = () => {
+const Book = () => {
   const params = useParams();
 
   return (
@@ -2033,6 +2063,9 @@ fonxt -size ها با rem هستند که responsive باشه
 ```
 
 
+- platee
+
+برای تعریف پالت های رنگی مون
 
 
 - AppBar
@@ -2049,3 +2082,434 @@ fonxt -size ها با rem هستند که responsive باشه
 برای این که بخواهیم Toolbar مان حالت stichyداشته باشه..
 وقتی اسکرول کنیم نمایش داده بشه و دنبال ما بیاد :
 
+
+- components
+
+تگ درون theme.. ما کامپوننت های خودمان را داخلش مشخص می کنیم.
+ما توسط تگ داخل components به نام defaultProbs می توانیم کامپوننت ها را سفارشی سازی کنیم.
+
+مثلا در مثال زیر ما گفتیم که  امکان موچ روی کامپوننت MuiButtonBase در تمام پروژه غیرفعال بشه
+
+- Button
+
+
+دارای varient های مختلف زیر هست:
+
+text  - contained - outline
+
+دارایprob هایزیر هست :
+
+
+color :
+
+
+onClick:
+
+
+
+size: small - medium - large
+
+
+startIcon : 
+
+endIcon:
+
+
+هم چنین انواع Button های زیر هم داریم :
+
+
+
+- sx
+
+
+ ما اگر بخواهیم به کامپوننت هایMui استایل بدهیم .. یعنی inline style از sx استفاده می کنیم..
+ این ویژگی تمام قابلیت های css را به ما می دهد.
+
+ هم چنین به theme هم دسترسی داره..
+
+ ```
+<Typography varient="h4" sx={{ marginLeft:10 , typography:"h3" }}>
+mytext
+</Typography>
+ ```
+
+ width: 1/2  => 50 %
+ width : 20 => 20 px
+ color : 'primary.main' => theme.paletee.primary.main
+ p:2  => pdding: 2 px
+border: 1 => '1px solid black'
+
+
+
+- Box: 
+
+مشابه div در html هست..
+
+استایل درون آن به زیرمجموعه اش اعمال می شود.
+
+درون Box می توان چند تا Typography , Avatarو.. قرار داد.
+
+- Avatar:
+
+```
+<Avatar  varient = "rounded" sx= {{height: 200 , width:200 , margin: "0 auto"}}
+src= {require("../../assets/avatart.jpg")}/>
+```
+اگه به هر دلیلی عکس کاربر لود نشده می توانیم از FallBack 
+
+استفاده کنیم.
+
+- divider
+
+برای ایجاد خط افقی یا عمودی
+
+- Hidden 
+می خواهیم برای بعضی از breakpoints ها بعضی از کامپوننت ها دیده نشود..
+مثلا در مثال زیر می خواهیم Avatar برای مانیتور md به پایین دیده نشود .. حتی می توانیم شرط بذاریم براساس State:
+ mdDown خالی به معنای true بودن هست
+```
+
+<Hidden mdDown = {state ? true :false}>
+
+<Avatar  varient = "rounded" sx= {{height: 200 , width:200 , margin: "0 auto"}}
+src= {require("../../assets/avatart.jpg")}/>
+</Hidden>
+```
+
+البته می شه بعضی جاها از صفت display استفاده کرد به شکل زیر ولی آن چنان رسپانسیو نیست.. چون وقتی سایز ماینتور را تغییر می دهیم box کلا حذف می شود.
+
+```
+<Box display = {{sm : "none"}}> 
+</Box>
+
+```
+
+- Tab
+
+ تگ های مهم .. Tab,TabPanel,
+
+
+ ```
+ import * as React from 'react';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function CustomTabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
+
+function a11yProps(index: number) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+export default function BasicTabs() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: '100%' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+          <Tab label="Item One" {...a11yProps(0)} />
+          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="Item Three" {...a11yProps(2)} />
+        </Tabs>
+      </Box>
+      <CustomTabPanel value={value} index={0}>
+        Item One
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        Item Two
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={2}>
+        Item Three
+      </CustomTabPanel>
+    </Box>
+  );
+}
+
+ ```
+
+-- صفت های مهم Tabs: textColor - indicatorColor,aria-label,centered,  variant="fullWidth"  , 
+
+ variant="scrollable" , scrollButtons="auto" => برای تب های قابل اسکرول کردن
+
+صفت های مهم Tab: disabled , wrapped,
+
+
+-- vertical tabs : 
+استفاده از orientation="vertical"
+
+
+--Nav Tabs
+
+استفاده از تگ های Tabs , LinkTab
+
+- Grid
+
+The responsive layout grid adapts to screen size and orientation, ensuring consistency across layouts.
+
+The Grid component works well for a layout with a known number of columns. The columns can be configured with multiple breakpoints to specify the column span of each child.
+
+نسخه های جدیدتر به جای CssGrid از flex استفاده می کند.
+
+-- Grid  container
+
+کل محتوا درون  Grid container قرار می گیرد..
+
+
+کل محتوا ی   صفحه شامل 12 ستون هست.
+
+براساس سایز اسکرین می توانیم سایز ستون ها را مشخص کنیم :
+XS - SM - MD
+
+container دارای 12 ستون هست که باید بین grid ها پخش شود.
+
+مثال زیر ایجاد دو ستون هر کدام با اندازه 2و10 برای ماینتور کوچیک که کل صفحه را گرفته
+```
+
+<Grid container sx ={{height : 100vh}} >
+  <Grid xs= {2} sx={{backgroundColor: "primary.main"}} >
+    <Typography varient="h5"> سایدبار</Typography>
+    
+  </Grid>
+
+  <Grid xs= {12} sx={{backgroundColor: "secondary.main"}} >
+    <Typography varient="h5"> محتوای اصلی</Typography>
+    
+  </Grid>
+</Grid>
+```
+برای رسپانسیو کردن می توانیم از سایزهای مختلف استفاده کنیم md-sm-xs..
+می توانیم بگیم که وقتی اسکرین کوچیک شد مثلا اندازه گوشی سایدبار مخفی بشه و مثلا drawer نمایش داده شود. منوی همبرگر مانند..
+
+- Breakpoints
+
+default Breakpoints:
+
+-- xs : extra small: 0x
+-- sm : small : 600 px
+-- md: medium : 900 px
+-- lg: large : 1200px
+--xl :  extra large : 1536 px
+
+حتی ما می توانیم مقادیر پیکسل ها برای این breakpoint ها را تغییر بدیم.. یعنی مثلا بگیم md برابر 1000 px باشه..
+این کار را با تگ breakpoints در 
+theme می توانیم انجام بدیم.
+
+نمونه ای از رسپانسیو کردن صفحه
+
+```
+
+<Grid container sx ={{height : 100vh}} >
+  <Grid xs= {0} sm={0} md={3} lg={2} xl={2} sx={{backgroundColor: "primary.main"}} >
+    <Typography varient="h5"> سایدبار</Typography>
+    
+  </Grid>
+
+  <Grid 
+  xs= {12} sm={12} md={9} lg={10} xl={10}
+   sx={{backgroundColor: "secondary.main"}} >
+    <Typography varient="h5"> محتوای اصلی</Typography>
+    
+  </Grid>
+</Grid>
+```
+
+صفت های مهمه دیگر container : 
+-- size
+-- columns
+-- columnSpacing
+-- rowSpacing
+-- direction
+-- spacing
+--offset 
+
+### layouts
+
+ما می خواهیم مثلا navbar وقتی وارد صفحه ورود یا داشبورد می شویم نمایش داده نشه ..
+کلا وارد صفحه دیگه باشیم ..برای این کار از layout ها استفاده می کنیم.
+یه جوراییhoc می سازیم که کامپوننت والد شلوغ نشه..
+
+
+یک فایلMainLayout می سازیم .. که یک کامپوننت هست که prob می گیرد:
+
+```
+
+const MainLayout = ({}) => {
+
+  return (
+
+    <CacheProvider value = {cacheRTL}>
+      <ThemeProvider theme = {theme} >
+        <HelmetProvider>
+          <Helmet>
+            <title> title of the site
+            </title>
+          </Helmet>
+        </HelmetProvider>
+      </ThemeProvider>
+    </CacheProvider>
+  )
+}
+
+```
+
+### نحوه استایل دهی در mui
+
+ - plain css
+
+PlainCssSlider.css
+```
+.slider {
+  colr: #20b2aa;
+}
+
+.slider:hover {
+  color : #2e8b57
+}
+```
+
+PlainCssSlider.js 
+
+```
+
+import * as React from 'react';
+import Slider from '@mui/material/Slider';
+import './PlainCssSlider.css';
+
+
+export default function PlainCssSlider(){
+  return (
+
+  <div>
+    <Slider  defalutValue={30} />
+     <Slider  defalutValue={30} className="slider" />
+  </div>
+  );
+}
+
+```
+
+نحوه دسترسی به کلاس های عمیق تر مثلا دایره اسلایدر میشه کلاس نقطه کلاس اصلی "
+
+```
+.slider .MuiSlider-thumb {
+  border-radius : 1 px;
+}
+```
+ 
+ - global css
+
+ وقتی بخواهیم کلاس slider در کل اپلیکینشن تغییر کند:
+
+```
+
+.MuiSlider-root {
+  color : #20b2aa;
+}
+
+.MuiSlider-root:hover {
+  color : #2e8b57;
+}
+
+.MuiSlider-root .MuiSlider-thumb {
+   border-radius : 1 px;
+}
+```
+
+ - Styled Compoenents
+
+
+فرض کنید می خواهیم button  را فقط در header تغییر بدیم به این روش هم می توانیم عمل کنیم :
+
+
+```
+import {Button } from "@mui/material";
+
+import {styled} from "@mui/material/styles";
+
+
+const customizedButton = styled(Button)`
+  color: lime;
+
+`;
+
+
+return (
+
+  <div>
+    <CustomizedButton variant = "h4" color= "secondary">
+    کلیک کن
+    </CustomizedButton>
+  </div>
+);
+
+```
+
+برای دسترسی به کللاس های عمیق مانند MuiSlider-thum باید قبل از آن از & استفاده کنیم.
+
+
+ - css modules
+
+در قسمت استایل دهی در react توضیح داده شد.
+ - Emotions
+
+استفاده از ویژگی css :
+
+مشابه styled compoennts هست فقط به جای این که یک کامپوننت بسازیم روی همان کامپوننت با استفاده از ویزگی css اعمال می کنیم
+
+
+
+```
+import {css } from '@emotion/react';
+import Slider from '@mui.material/Slider';
+
+export default functionEmotionsCss(){
+
+  return (
+    <Slider 
+    defaultValue={30}
+    css={css`
+      color: #222333;
+      :hover {
+        color: #ffffff;
+      }
+    `
+
+    }
+    />
+  )
+}
+```
+
+ - Tailwind css
+
+ 
+
+ - TSS
