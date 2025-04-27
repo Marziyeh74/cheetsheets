@@ -211,6 +211,33 @@ xpos ypos : 50px, 150px
 ### Media query
 
 ## CSS variables
+### definition
+- can be defined globally or locally
+- global variables defined in root of html:
+  ```
+  :root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+  }
+  ```
+  - can access to varable using var() function:
+    ```
+    body {
+    background-color : var(--blue);
+    }
+    ```
+ - local variables : can be used only inside the selector where it is declared,
+   if we have local varaiable just like the root variable, it will override it`s gloabal value;
+   ```
+   button {
+    --blue: #0000ff; /* local variable will override global */
+    background-color: var(--white);
+    color: var(--blue);
+   
+   }
+   ```
+   - CSS variables have access to the DOM, which means that you can change them with JavaScript. using  document.querySelector(':root')
+     
 ## SCSS,SASS, less
 ## CSS units
 Many CSS properties take "length" values, such as width, margin, padding, font-size  , 
