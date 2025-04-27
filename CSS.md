@@ -206,5 +206,26 @@ xpos ypos : 50px, 150px
   - inline : span,a , are inline elemements
   - block : like div,p,h1,h2 are block elements
   - inherit
-  - none 
+  - none
+### Flex
+### Grid
+### Media query
+
+## CSS variables
+## SCSS,SASS, less
+### CSS units
+- rem
+- em
+- px
+- pt
+- vh
+- vw
+- %
+### CSS functions
+- calc
+- var
+- max
+- min
+  
+  
 
