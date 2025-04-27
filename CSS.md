@@ -183,7 +183,6 @@ xpos ypos : 50px, 150px
      margin : 25px, 30px; /* top and bottom , right and left
      }
      ```
-  ### display
   ### postion:
   - static : Static positioned elements are not affected by the top, bottom, left, and right properties
   - relative : is positioned relative to its normal position (top , right,left,bottom ) properties
@@ -213,14 +212,21 @@ xpos ypos : 50px, 150px
 
 ## CSS variables
 ## SCSS,SASS, less
-### CSS units
-- rem
-- em
+## CSS units
+Many CSS properties take "length" values, such as width, margin, padding, font-size  , 
+For some CSS properties, negative lengths are allowed
+### Absolue
 - px
 - pt
-- vh
-- vw
-- %
+- mm
+- cm
+- in  (inch)
+### Relative
+- rem : Relative to font-size of the root element. if html font-size is 16 px , 1 rem means 16px.
+- em : 	Relative to the font-size of the element or near parent (2em means 2 times the size of the current font)
+- vh : Relative to 1% of the height of the viewport(browser window size)
+- vw : Relative to 1% of the width of the viewport(browser window size)
+- % :Relative to the parent element
 ### CSS functions
 - calc
 - var
