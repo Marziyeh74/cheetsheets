@@ -191,6 +191,7 @@ xpos ypos : 50px, 150px
    توی اولین والدی که دارای postition:relative هست توسط صفت های top-left-bottom-right مکانش تعیین می شود.
   - sticky :
     بین relative, fixed قرار می گیرد .. و مثلا می تونیم تعیین کنیم که وقتی به top رسید مکانش fixed می شود.
+    It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).
     ```
     div.sticky {
     position: sticky;
@@ -199,5 +200,10 @@ xpos ypos : 50px, 150px
     border: 2px solid #4CAF50;
     }
     ```
-  ### 
+  ### display
+  
+  - inline : span,a , are inline elemements
+  - block : like div,p,h1,h2 are block elements
+  - inherit
+  - none 
 
