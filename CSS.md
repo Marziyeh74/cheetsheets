@@ -35,5 +35,62 @@ p.center {
 
 
 ### Pseudo-class selectors :
+- syntax :
+```
+selector:pseudo-class {
+  property: value;
+}
+```
+مثال :
+```
+a:link {
+}
+
+a:visited {
+}
+
+/* mouse over link */
+div:hover {
+}
+
+/* Hover over me to show the <p> element. */
+div:hover p {
+  display: block;
+}
+
+```
 ### Pseudo-elements selectors :
+- syntax :
+```
+selector::pseudo-element {
+  property: value;
+}
+  ```
+- pseudo-element are :
+  - first-line , first-letter,
+  - before , after, marker,selection
+```
+p::first-line {
+  color: #ff0000;
+  font-variant: small-caps;
+}
+h1::before {
+  content: url(smiley.gif);
+}
+
+::selection {
+  color: red;
+  background: yellow;
+}
+```
+
 ### Attribute selectors :
+- selector is used to select elements with a specified attribute.
+  ```
+  a[target] {
+  background-color: yellow;
+  }
+  a[target="_blank"] {
+  background-color: yellow; }
+
+  ```
