@@ -209,7 +209,20 @@ xpos ypos : 50px, 150px
 ### Flex
 ### Grid
 ### Media query
+- @media : use for define different style for diffrent media types.
+- media types: all | print | screen
+- media features: orientation | max-(width or height) | width | height
 
+  ```
+  @media not|only mediatype and (media feature) and (media feature) {
+  CSS-Code;
+  }
+  @media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+  }
+  ```
 ## CSS variables
 ### definition
 - can be defined globally or locally
@@ -238,7 +251,7 @@ xpos ypos : 50px, 150px
    ```
    - CSS variables have access to the DOM, which means that you can change them with JavaScript. using  document.querySelector(':root')
      
-## SCSS,SASS, less
+
 ## CSS units
 Many CSS properties take "length" values, such as width, margin, padding, font-size  , 
 For some CSS properties, negative lengths are allowed
@@ -259,6 +272,8 @@ For some CSS properties, negative lengths are allowed
 - var
 - max
 - min
+
+## SCSS,SASS, less
   
   
 
