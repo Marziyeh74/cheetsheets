@@ -140,6 +140,7 @@ xpos ypos : 50px, 150px
  - contain
  - padding
  - border
+ - outline
  - margin
   ### border :
   - border-style : solid, dotted,dashed,none,hidden,
