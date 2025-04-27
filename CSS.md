@@ -6,23 +6,12 @@
 ### Simple selectors:
 - select elements based on name, id, class
 
-- grouping selectors. univeral selector
-  ```
-  #id{
+- grouping selectors. univeral selector (*)
 
-  }
-  .class {
 
-  }
-
-  element {
-  }
-  * {
-
-}
+example :
 ```
 
-```
 p.center {
   text-align: center;
   color: red;
@@ -34,6 +23,16 @@ p.center {
 ``` 
 
 ### Combinator selectors :
+
+- Descendant combinator (space) :  (div p )
+  تگ های p که یکی از اجداشان div باشد
+- Child combinator (>) : (div>p):
+  تگ p که اولین والدش div باشد
+- Next sibling combinator (+) : (div + p):
+  تگ p که بلافاصله بعد از div قرار گرفته اند و والدشان یکی هست.
+- Subsequent-sibling combinator (~): ( div ~ p) :
+  تمام تگ های p که بعد از div قرار گرفته اند و والدشان یکی هست.
+
 
 ### Pseudo-class selectors :
 ### Pseudo-elements selectors :
