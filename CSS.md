@@ -206,8 +206,7 @@ xpos ypos : 50px, 150px
   - block : like div,p,h1,h2 are block elements
   - inherit
   - none
-### Flex
-### Grid
+
 ### Media query
 - @media : use for define different style for diffrent media types.
 - media types: all | print | screen
@@ -268,11 +267,15 @@ For some CSS properties, negative lengths are allowed
 - vw : Relative to 1% of the width of the viewport(browser window size)
 - % :Relative to the parent element
 ### CSS functions
-- calc
+- calc : like width: (calc(100% - 100px) )
 - var
-- max
-- min
+- max or min :   width: max(50%, 300px);
+- acos , asin : Returns the inverse cosine or sin of a number between -1 and 1
 
+## type of design in css,html
+- table
+- grid
+- flex
 ## SCSS,SASS, less
   
   
