@@ -24,7 +24,35 @@
     Requires a rebuild to update content (not ideal for highly dynamic sites)
 
     Not suitable for real-time data without client-side JavaScript
-### popular framework: Next.js , Nuxt.js
+ ### best for  Blogs, documentation, marketing websites, portfolios, and content-driven sites.
+### popular framework:
+    Next.js (with SSG support)
+
+    Gatsby (React-based)
+
+    Hugo (Go-based, extremely fast)
+
+    Jekyll (Ruby-based, great for blogs)
+
+    Nuxt.js (Vue-based SSG)
 ## 2- SSR (Server-Side Rendering) :
+The server creates HTML dynamically for each request.
+The user visits the site, first server creates (Ready to Render) HTML files. now browser can quicky render HTML but the site in not interactive. then browser then downloads js. now user can view contenet & the ineractions can be recorded , finally browser executes the JS framework , now the page in interacive.
+
+### advantages :
+consisten with SEO , fast , secure ( data processsing is done server side).
+### limitations:
+ Higher server load, slower than SSG.
+
+ ### popular frameworks:
+     Next.js (برای React)
+
+    Nuxt.js (برای Vue)
+
+    SvelteKit
+
+    Angular Universal
+     PHP (Laravel)
+  ### best for  News sites, e-commerce, dashboards
 ## 3- ISR (Incremental Static Regeneration):
 ## 4- CSR (Client-Side Rendering):
