@@ -276,6 +276,12 @@ For some CSS properties, negative lengths are allowed
 - table
 - grid
 - flex
+
+
+![Screenshot 2025-05-06 131548](https://github.com/user-attachments/assets/2863c305-4606-431b-9d6f-a536b82b5f79)
+
+![Screenshot 2025-05-06 131559](https://github.com/user-attachments/assets/e63f9af0-b508-4e25-904e-b014e0ee8729)
+
 ## SCSS,SASS, less
   
   
